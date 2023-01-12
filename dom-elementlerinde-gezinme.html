@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        Todo App 
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <ul id="task-list" class="list-group-flush">
+                        <!-- <li class="task list-group-item">
+                            <div class="from-check">
+                                <input type="checkbox" id="1" class="from-check-input">
+                                <label for="1" class="from-check-label">Görev 1</label>
+                            </div>
+
+                        </li> -->
+                    
+                                                                    
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        "ute script";
+        let sonuc;
+        let gorevLİstesi = [
+            {"id":1, "gorevAdi": "Görev 1"},
+            {"id":2, "gorevAdi": "Görev 2"},
+            {"id":3, "gorevAdi": "Görev 3"},
+            {"id":4, "gorevAdi": "Görev 4"},
+        ];
+     
+       ul = document.getElementById("task-list");
+
+     for (let gorev of gorevLİstesi){
+
+         let li = ` 
+             <li class="task list-group-item">
+                 <div class="from-check">
+                      <input type="checkbox" id="${gorev.id}" class="from-check-input">
+                      <label for="${gorev.id}" class="from-check-label"> ${gorev.gorevAdi}</label>
+                 </div>
+
+             </li>
+
+       `; 
+
+       ul.insertAdjacentHTML("beforeend", li);
+     }
+
+   document.querySelector("#task-list").children[1].classList.add("bg-danger");
+
+   sonuc = document.querySelector("#task-list").children[1].classList.contains("bg-danger");
+
+    console.log(sonuc);
+
+
+    </script> 
+</body>
+</html>
+
